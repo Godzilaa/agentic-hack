@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-white font-sans;
+}
+
+.card {
+  @apply bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg;
+}
+
+.card-glow {
+  @apply relative overflow-hidden;
+}
+
+.card-glow::before {
+  content: '';
+  @apply absolute inset-0 opacity-5;
+  background: linear-gradient(135deg, #22c55e 0%, #0ea5e9 100%);
+}
+
+.stat-card {
+  @apply bg-gray-800/50 rounded-lg p-4 border border-gray-700;
+}
+
+.profit-positive {
+  @apply text-green-400;
+}
+
+.profit-negative {
+  @apply text-red-400;
+}
+
+.status-idle {
+  @apply bg-gray-600;
+}
+
+.status-working {
+  @apply bg-yellow-500 animate-pulse;
+}
+
+.status-paused {
+  @apply bg-orange-500;
+}
+
+.status-error {
+  @apply bg-red-500;
+}
+
+.task-card {
+  @apply bg-gray-800/80 rounded-lg p-4 border border-gray-700 transition-all duration-300;
+}
+
+.task-card:hover {
+  @apply border-locus-500 shadow-lg shadow-locus-500/10;
+}
+
+.task-pending {
+  @apply border-l-4 border-l-gray-500;
+}
+
+.task-in_progress {
+  @apply border-l-4 border-l-yellow-500;
+}
+
+.task-completed {
+  @apply border-l-4 border-l-green-500;
+}
+
+.task-failed {
+  @apply border-l-4 border-l-red-500;
+}
+
+.btn-primary {
+  @apply bg-locus-600 hover:bg-locus-700 text-white px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.profit-counter {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
