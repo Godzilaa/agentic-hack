@@ -211,8 +211,7 @@ For each lead, create a 2-3 sentence personalized outreach message.`;
 
   private async executeContentSummarization(
     task: Task,
-    gig: Task,
-    gigDef: GigDefinition,
+    gig: GigDefinition,
     totalCost: number
   ): Promise<TaskOutput> {
     const { query, context } = task.input;

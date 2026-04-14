@@ -68,7 +68,7 @@ export class FreelanceAgent extends EventEmitter {
 
   async refreshBalance(): Promise<number> {
     const balance = await this.locusClient.getBalance();
-    this.state.walletBalance = parseFloat(balance.balance);
+    this.state.walletBalance = parseFloat(balance.usdc_balance);
     this.emit('balance_update', this.state.walletBalance);
     return this.state.walletBalance;
   }

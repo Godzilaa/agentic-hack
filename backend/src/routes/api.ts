@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { createLocusClient } from './services/locus-client.js';
-import { FreelanceAgent } from './agents/agent.js';
-import type { TaskInput, TaskType } from './lib/types.js';
+import { createLocusClient } from '../services/locus-client.js';
+import { FreelanceAgent } from '../agents/agent.js';
+import type { TaskInput, TaskType } from '../lib/types.js';
 
 const app = express();
 app.use(cors());
@@ -29,7 +29,7 @@ app.get('/api/wallet/balance', async (_req: Request, res: Response) => {
   try {
     const ag = getAgent();
     const balance = await ag.refreshBalance();
-    res.json({ success: true, data: { balance, token: 'USDC' } });
+    res.json({ success: true, data: { balance, token: 'USDC', wallet_address: process.env.AGENT_WALLET_ADDRESS } });
   } catch (error) {
     res.status(500).json({ success: false, error: (error as Error).message });
   }

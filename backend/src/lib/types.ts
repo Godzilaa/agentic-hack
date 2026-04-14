@@ -6,9 +6,11 @@ export interface LocusConfig {
 }
 
 export interface WalletBalance {
-  balance: string;
-  token: string;
+  usdc_balance: string;
   wallet_address: string;
+  chain: string;
+  allowance: string | null;
+  max_transaction_size: string | null;
 }
 
 export interface Transaction {
